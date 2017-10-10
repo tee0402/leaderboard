@@ -1,11 +1,16 @@
-
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="leaderboard.css">
-  <script src="leaderboard.js"></script>
-  <title>Title</title>
+  <title>Leaderboard</title>
 </head>
 
 <body>
-
+  <h1>Leaderboard</h1>
+  {{> leaderboard}}
 </body>
+
+<template name="leaderboard">
+  <ul>
+  {{#each player}}
+    <li class="player {{selectedClass}}">{{name}}: {{score}}</li>
+  {{/each}}
+  </ul>
+</template>
